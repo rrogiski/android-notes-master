@@ -5,9 +5,7 @@ import android.graphics.Bitmap;
 
 import com.mauriciogiordano.easydb.bean.Model;
 
-/**
- * Created by mauricio on 4/21/15.
- */
+
 public class Note extends Model<Note> {
 
     @ModelField

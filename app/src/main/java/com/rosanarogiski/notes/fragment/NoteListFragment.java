@@ -19,9 +19,6 @@ import com.rosanarogiski.notes.bean.Note;
 
 import java.util.List;
 
-/**
- * Created by mauricio on 4/21/15.
- */
 public class NoteListFragment extends Fragment {
 
     private ListView listView;

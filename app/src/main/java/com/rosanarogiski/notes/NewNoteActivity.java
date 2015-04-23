@@ -12,9 +12,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * Created by mauricio on 4/21/15.
- */
 public class NewNoteActivity extends ActionBarActivity {
 
     private File mCurrentFile;
@@ -28,6 +25,7 @@ public class NewNoteActivity extends ActionBarActivity {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
         Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
 
         try {
             File imageFile = createImageFile();

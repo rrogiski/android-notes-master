@@ -12,9 +12,7 @@ import com.rosanarogiski.notes.fragment.NoteListFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by mauricio on 4/21/15.
- */
+
 public class MainActivity extends ActionBarActivity {
 
     private ViewPager viewPager;

@@ -14,9 +14,7 @@ import com.rosanarogiski.notes.bean.Note;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by mauricio on 4/21/15.
- */
+
 public class NoteAdapter extends BaseAdapter {
 
     private List<Note> dataList;
