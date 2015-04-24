@@ -40,11 +40,18 @@ public class MainActivity extends ActionBarActivity {
         public HomePagerAdapter(FragmentManager fm) {
             super(fm);
 
-            fragmentList = new ArrayList<Fragment>();
+            fragmentList = new ArrayList<>();
+            NoteListFragment nf1 = new NoteListFragment();
+            nf1.setCod(1);
+            NoteListFragment nf2 = new NoteListFragment();
+            nf1.setCod(2);
+            NoteListFragment nf3 = new NoteListFragment();
+            nf1.setCod(3);
 
-            fragmentList.add(new NoteListFragment());
-            fragmentList.add(new NoteListFragment());
-            fragmentList.add(new NoteListFragment());
+
+            fragmentList.add(nf1);
+            fragmentList.add(nf2);
+            fragmentList.add(nf3);
         }
 
         @Override

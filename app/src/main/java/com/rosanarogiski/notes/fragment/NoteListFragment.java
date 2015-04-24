@@ -16,13 +16,17 @@ import com.rosanarogiski.notes.NewNoteActivity;
 import com.rosanarogiski.notes.R;
 import com.rosanarogiski.notes.adapter.NoteAdapter;
 import com.rosanarogiski.notes.bean.Note;
+import com.rosanarogiski.notes.util.NoteComparator;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class NoteListFragment extends Fragment {
 
     private ListView listView;
     private NoteAdapter listAdapter;
+    private int cod;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,10 +47,42 @@ public class NoteListFragment extends Fragment {
         Note note = new Note(getActivity());
 
         List<Note> noteList = note.findAll();
+        switch(cod){
+            case 1: //recents
+                for(int i=0; i<noteList.size(); i++){
+                    if(!noteList.get(i).isVisualized()){
+                        noteList.remove(i);
+                        i--;
+                    }
+                }
+                Collections.sort(noteList, new NoteComparator());
+                break;
+            case 2: //uploads
+                for(int i=0; i<noteList.size(); i++){
+                    if(!noteList.get(i).isUpload()){
+                        noteList.remove(i);
+                        i--;
+                    }
+                }
+                break;
+            case 3: //download
+                for(int i=0; i<noteList.size(); i++){
+                    if(!noteList.get(i).isDownload()){
+                        noteList.remove(i);
+                        i--;
+                    }
+                }
+                break;
+        }
 
         listAdapter.setDataList(noteList);
 
         return rootView;
+    }
+
+
+    public void setCod(int cod){
+        this.cod = cod;
     }
 
     @Override

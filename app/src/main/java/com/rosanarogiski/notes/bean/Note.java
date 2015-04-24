@@ -18,10 +18,22 @@ public class Note extends Model<Note> {
     private String imageSrc;
 
     @ModelField
-    private float rating;
+    private float sum_rating;
 
     @ModelField
     private long timestamp;
+
+    @ModelField
+    private float number_rating;
+
+    @ModelField
+    private boolean upload;
+
+    @ModelField
+    private boolean download;
+
+    @ModelField
+    private boolean visualized;
 
     private Bitmap image;
 
@@ -65,11 +77,12 @@ public class Note extends Model<Note> {
     }
 
     public float getRating() {
-        return rating;
+        return sum_rating;
     }
 
     public void setRating(float rating) {
-        this.rating = rating;
+        this.sum_rating += rating;
+        this.number_rating++;
     }
 
     public long getTimestamp() {
@@ -80,4 +93,43 @@ public class Note extends Model<Note> {
         this.timestamp = timestamp;
     }
 
+    public boolean isUpload() {
+        return upload;
+    }
+
+    public void setUpload(boolean upload) {
+        this.upload = upload;
+    }
+
+    public boolean isDownload() {
+        return download;
+    }
+
+    public void setDownload(boolean download) {
+        this.download = download;
+    }
+
+    public boolean isVisualized() {
+        return visualized;
+    }
+
+    public void setVisualized(boolean visualized) {
+        this.visualized = visualized;
+    }
+
+    public float getSum_rating() {
+        return sum_rating;
+    }
+
+    public void setSum_rating(float sum_rating) {
+        this.sum_rating = sum_rating;
+    }
+
+    public float getNumber_rating() {
+        return number_rating;
+    }
+
+    public void setNumber_rating(float number_rating) {
+        this.number_rating = number_rating;
+    }
 }
